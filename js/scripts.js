@@ -1,8 +1,7 @@
 //business logic
     var pingPong = function(userNumber) {
-      alert("hey");
-      for (var index = 0; index <= userNumber; index += 1) {
-        if ((index <= 0) || (isNaN(index))) {
+      for (var index = 1; index <= userNumber; index += 1) {
+        if (index <= 0) {
           alert("Please enter a valid number greater than 0.");
         } else if ((index > 0) && (index % 15 === 0)) {
             $(".output").append("<li>" + "PINGPONG!" + "</li>")
@@ -16,7 +15,6 @@
       }
     };
 
-
 //user interface logic
 $(document).ready(function() {
   $("form#numberForm").submit(function(event) {
@@ -28,3 +26,5 @@ $(document).ready(function() {
     $(".output").show();
   });
 });
+
+// I think this is what I need but can't get it to work... document.getElementById(".output").reset();
