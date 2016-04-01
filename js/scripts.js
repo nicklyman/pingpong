@@ -1,15 +1,16 @@
 //business logic
     var valid = function(validNumber) {
-      if ((number >= 1) && (number !== NaN)) {
-      return true;
-      alert("That is a valid number.");
+      if ((validNumber >= 1) && (validNumber !== NaN)) {
+        return true;
       } else {
-      return alert("Please enter a number greater than 0.");
+        return false;
+        alert("Please enter a number greater than 0.");
       }
     };
 
-    var pingPong = function(number) {
-      for (var index = 0; index <= userNumber; index += userNumber) {
+    var pingPong = function(userNumber) {
+      // if (true);
+      for (var index = 0; index < userNumber; index += 1) {
         if (userNumber % 15 === 0) {
           $(".output").append("<li>" + "PINGPONG!" + "</li>");
       } if (userNumber % 5 === 0) {
@@ -17,7 +18,7 @@
       } if (userNumber % 3 === 0) {
           $(".output").append("<li>" + "PING!" + "</li>");
       } else {
-          $(".output").append("<li>" + userNumber + "</li>");
+          $(".output").append("<li>" + (index + 1) + "</li>");
         }
       }
     }
@@ -26,12 +27,13 @@
 //user interface logic
 $(document).ready(function() {
   $("form#number-form").submit(function(event) {
-    event.preventDefalit();
+    event.preventDefault();
 
-    var userNumber = $(parseInt("#value").val());
-    console.log(userNumber);
+    var validNumber = parseInt($("input#value").val());
+    var ouput = pingPong(validNumber);
 
-    $("#result").show();
-    $(".result").text(pingPong);
+    $(".output").show();
+    // $("#value").text(validNumber)
+    // $(".result").text(pingPong);
   });
 });
