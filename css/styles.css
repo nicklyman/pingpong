@@ -1,3 +1,36 @@
+body {
+  margin: 10px;
+  text-align: center;
+  font-family: monospace;
+}
+
 .output {
   display: none;
+}
+
+.jumbotron {
+  margin-top: 20px;
+  text-align: center;
+  color: red;
+}
+
+li {
+  list-style: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#numberForm {
+  text-align: center;
+  font-size: 16px;
+}
+
+#value {
+  border-width: medium;
+  border-color: red;
+}
+
+img {
+  max-width: 30%;
+  max-height: auto;
 }
