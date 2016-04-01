@@ -1,5 +1,5 @@
 //business logic
-    var valid = function(validNumber) {
+    var valid = function(validUserNumber) {
       if ((validNumber >= 1) && (validNumber !== NaN)) {
         return true;
       } else {
@@ -10,15 +10,15 @@
 
     var pingPong = function(userNumber) {
       // if (true);
-      for (var index = 0; index < userNumber; index += 1) {
-        if (userNumber % 15 === 0) {
+      for (var index = 0; index <= userNumber; index += 1) {
+        if ((index > 0) && (index % 15 === 0)) {
           $(".output").append("<li>" + "PINGPONG!" + "</li>");
-      } if (userNumber % 5 === 0) {
+      } else if ((index >0) && (index % 5 === 0)) {
           $(".output").append("<li>" + "PONG!" + "</li>");
-      } if (userNumber % 3 === 0) {
+      } else if ((index >0) && (index % 3 === 0)) {
           $(".output").append("<li>" + "PING!" + "</li>");
-      } else {
-          $(".output").append("<li>" + (index + 1) + "</li>");
+      } else if (index > 0) {
+          $(".output").append("<li>" + (index) + "</li>");
         }
       }
     }
@@ -30,7 +30,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     var validNumber = parseInt($("input#value").val());
-    var ouput = pingPong(validNumber);
+    var output = pingPong(validNumber);
 
     $(".output").show();
     // $("#value").text(validNumber)
